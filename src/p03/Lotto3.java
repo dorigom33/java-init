@@ -34,13 +34,12 @@ public class Lotto3 {
 
         for(int i=0; i<strs.length; i++) {
             for(int k=0; k<6; k++) {
-                if(lotto[i] == Integer.parseInt(strs[k])){
+                if(lotto[k] == Integer.parseInt(strs[i])){
                 	count++;
                 }
             }
         }
-        System.out.println("니가 입력한 숫자 : " + lottoStr);
-        System.out.println("나온 숫자 : " + lotto);
+
         System.out.println("맞춘 개수 : " + count);
     }
 }
