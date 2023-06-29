@@ -9,12 +9,12 @@ public class Lotto3 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("1부터 45까지의 수를 6개 입력 : ");
-        String input = scanner.nextLine();
+        String lottoStr = scanner.nextLine();
 
-        String[] numbers = input.split(",");
-        int[] rNum = new int[numbers.length];
-        for (int i=0; i< numbers.length; i++){
-            rNum[i] = Integer.parseInt(numbers[i]);
+        String[] strs = lottoStr.split(",");
+        int[] rNum = new int[strs.length];
+        for (int i=0; i< strs.length; i++){
+            rNum[i] = Integer.parseInt(strs[i]);
         }
 
         Random random = new Random();
