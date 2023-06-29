@@ -12,9 +12,9 @@ public class Lotto3 {
         String input = scanner.nextLine();
 
         String[] numbers = input.split(",");
-        int[] userNumbers = new int[numbers.length];
+        int[] rNum = new int[numbers.length];
         for (int i=0; i< numbers.length; i++){
-            userNumbers[i] = Integer.parseInt(numbers[i]);
+            rNum[i] = Integer.parseInt(numbers[i]);
         }
 
         Random random = new Random();
@@ -24,12 +24,12 @@ public class Lotto3 {
         }
 
         System.out.println("로또 번호 : " + Arrays.toString(lotto));
-        System.out.println("니가 입력한 번호 : " + Arrays.toString(userNumbers));
+        System.out.println("니가 입력한 번호 : " + Arrays.toString(rNum));
 
         int count = 0;
         for(int i=0; i< lotto.length; i++){
-            for(int j=0; j<userNumbers.length; j++){
-                if(lotto[i] == userNumbers[j]){
+            for(int j=0; j<rNum.length; j++){
+                if(lotto[i] == rNum[j]){
                     count++;
                     break;
                 }
