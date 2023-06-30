@@ -54,9 +54,9 @@ public class HumanExec {
 			if(humans[j].money >= avg) {
 				System.out.print(humans[j].name);
 			}
+			
 		}
 		
-
 	}
 
 }
