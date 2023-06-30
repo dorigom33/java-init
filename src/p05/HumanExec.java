@@ -52,7 +52,7 @@ public class HumanExec {
 		
 		for(int j=0;j<humans.length; j++) {
 			if(humans[j].money >= avg) {
-				System.out.println(humans[j].name);
+				System.out.print(humans[j].name);
 			}
 		}
 		
