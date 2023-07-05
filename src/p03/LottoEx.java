@@ -19,7 +19,7 @@ public class LottoEx {
 			int cnt = 0;
 			for(int i=0; i<strs.length; i++) {
 				for(int j=0; j<lotto.length; j++) {
-					if(lotto[i] == Integer.parseInt(strs[i])) {
+					if(lotto[j] == Integer.parseInt(strs[i])) {
 						cnt++;
 					}
 				}
