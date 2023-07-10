@@ -26,7 +26,7 @@ public class UserInfoRepository {
 				}
 
 			}
-			
+
 			ResultSet rs = stmt.executeQuery(sql);
 			while (rs.next()) {
 				Map<String, String> userInfo = new HashMap<>();
@@ -41,6 +41,33 @@ public class UserInfoRepository {
 		}
 		return userInfoList;
 
+	}
+
+	public int insertUserInfo(Map<String, String> userInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "INSERT INTO USER_INFO(UI_ID,UI_PWD,UI_NAME)";
+			sql += " VALUES('" + userInfo.get("uiId") + "','" + userInfo.get("uiPwd") + "',";
+			sql += " '" + userInfo.get("uiName") + "')";
+			return stmt.executeUpdate(sql);
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public int deleteUserInfo(Map<String, String> userInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM USER_INFO WHERE UI_NUM=" + userInfo.get("uiNum");
+			return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
 	}
 
 }

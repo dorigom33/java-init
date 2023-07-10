@@ -12,11 +12,13 @@ public class UserInfoController {
 	}
 
 	public int insertUserInfo(Map<String, String> userinfo) {
-		return 0;
+		UserInfoService uiService = new UserInfoService();
+		return uiService.insertUserInfo(userinfo);
 	}
 
 	public int deleteUserInfo(Map<String, String> userInfo) {
-		return 0;
+		UserInfoService uiService = new UserInfoService();
+		return uiService.deleteUserInfo(userInfo);
 	}
 
 	public static void main(String[] args) {
@@ -28,5 +30,15 @@ public class UserInfoController {
 		for (Map<String, String> userInfo : userInfoList) {
 			System.out.println(userInfo.get("uiNum") + "\t" + userInfo.get("uiName") + "\t" + userInfo.get("uiId") + "\t" + userInfo.get("uiPwd"));
 		}
+		
+		param.put("uiName", "TEST9");
+		param.put("uiId", "TEST9");
+		param.put("uiPwd", "TEST9");
+		int result = uiController.insertUserInfo(param);
+		System.out.println("실행결과 : " + result);
+		
+		param.put("uiNum", "6");
+		int deleteResult = uiController.deleteUserInfo(param);
+		System.out.println("실행결과 : " + deleteResult);
 	}
 }

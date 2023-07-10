@@ -9,5 +9,15 @@ public class ClassInfoService {
 		ClassInfoRepository clRepo = new ClassInfoRepository();
 		return clRepo.getClassInfoList(param);
 	}
+	
+	public int insertClassInfo(Map<String, String> classInfo) {
+		ClassInfoRepository ciInfo = new ClassInfoRepository();
+		return ciInfo.insertClassInfo(classInfo);
+	}
+	
+	public int deleteClassInfo(Map<String, String> classInfo) {
+		ClassInfoRepository ciInfo = new ClassInfoRepository();
+		return ciInfo.deleteClassInfo(classInfo);
+	}
 
 }

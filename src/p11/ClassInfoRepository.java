@@ -39,5 +39,32 @@ public class ClassInfoRepository {
 		}
 		return classInfoList;
 	}
+	
+	public int insertClassInfo(Map<String, String> classInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "INSERT INTO CLASS_INFO(CI_NAME,CI_DESC)";
+			sql += " VALUES('" + classInfo.get("clName") + "','" + classInfo.get("clDesc") + "')";
+			return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+	
+	public int deleteClassInfo(Map<String,String> classInfo) {
+		Connection con = DBCon.getCon();
+		try {
+			Statement stmt = con.createStatement();
+			String sql = "DELETE FROM CLASS_INFO WHERE CI_NUM=" + classInfo.get("clNum");
+			return stmt.executeUpdate(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return 0;
+		
+	}
 
 }
