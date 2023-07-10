@@ -14,7 +14,7 @@ public class DBCon {
 	static {
 		try {
 			Class.forName(DRIVER_CLASS);
-			System.out.println("내가 나오면 드라이버 잘 찾은거임!");
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			
